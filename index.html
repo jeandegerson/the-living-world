@@ -331,7 +331,7 @@ function fallenTrunk(o){
  /* The original trunk is 54 units tall, with a gentle 12-to-10.5 unit
     taper, matching the standing tree's silhouette and bark. */
  const baseRadius=profile.baseRadius,tipRadius=profile.topRadius;
- const length=54*size*S;
+ const length=trunkSpan(o)*Math.hypot(screenDX,screenDY)*S;/* Screen length now matches the trunk's world-space structural span. */
  const tx=Math.cos(theta),ty=Math.sin(theta),nx=-ty,ny=tx;
  const endX=start.x+tx*length,endY=start.y+ty*length;
  g.save();
